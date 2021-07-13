@@ -3,6 +3,7 @@ package com.csr.tech.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +36,7 @@ public class AppController {
         user.setPassword(encodedPassword);
          
         userRepo.save(user);
-         
+       
         return "register_success";
     }
     @GetMapping("/users")
